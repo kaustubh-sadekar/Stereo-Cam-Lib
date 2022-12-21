@@ -1,0 +1,6 @@
+theme: minima
+title: Affordable Stereo Camera
+description: A custom built stereo camera using affordable webcams
+
+header_pages:
+  about.md
