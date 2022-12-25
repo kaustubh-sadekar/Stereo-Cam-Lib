@@ -12,7 +12,7 @@ layout: default
 2. Developing software to capture accurate RGB-D frames with the setup.
 
 <p align="center">
-  <img src='/images/stereo_gif.gif'>
+  <img src='images/stereo_gif.gif'>
 </p>
 <p align="center">
   Stereo image pairs with corresponding disparity maps in the middle captured using the low-cost stereo camera for 3D reconstruction.
@@ -25,7 +25,7 @@ layout: default
 A 3D printed casing was used to keep the cameras rigidly fixed with respect to each other. The casing was designed by [**Mandar Kadwekar**](https://www.linkedin.com/in/mandar-kadwekar-19706a170/). The casing is designed such that the imaging planes of the left and right cameras are almost parallel and horizontally aligned. To know more about the design and fabrication steps please refer to my post - <a href="https://learnopencv.com/making-a-low-cost-stereo-camera-using-opencv/" target="_blank"> Making A Low-Cost Stereo Camera Using OpenCV</a>. 
 
 <p align="center">
-  <img src='/images/cameraDesign.gif'>
+  <img src='images/cameraDesign.gif'>
 </p>
 <p align="center">
   Stages of StereoCam setup.
@@ -41,7 +41,7 @@ Fixing the cameras rigidly in a casing is not enough to make a stereo camera wor
 I created a **custom stereo calibration grid using ArUco markers**. This pattern is easier to detect compared to the checkerboard pattern. The marker detection is done using the <a href="https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html" target="_blank">ArUco class</a> available in OpenCV library. **StereoCam** contains a utility method for capturing and detecting the calibration pattern with just a few lines of code.
 
 <p align="center">
-  <img src='/images/calibration.gif'>
+  <img src='images/calibration.gif'>
 </p>
 <p align="center">
   Capturing images of the calibration grid for stereo calibration.
@@ -52,7 +52,7 @@ I created a **custom stereo calibration grid using ArUco markers**. This pattern
 The **StereoCam** library has a facility to use the Block Matching algorithm for calculating dense stereo correspondence and the disparity map. The disparity map is then used for the calculation of depth maps. To learn more about disparity map and block matching algorithm please refer to my post <a href="https://learnopencv.com/depth-perception-using-stereo-camera-python-c/" target="_blank">Depth perception using stereo camera</a>. The post also explains how to convert disparity map to depth map. The Block Matching algorithm has several parameters that need to be tuned. **StereoCam** provides an interactive GUI to tune these parameters.
 
 <p align="center">
-  <img src='/images/tunedepthParams.gif'>
+  <img src='images/tunedepthParams.gif'>
 </p>
 <p align="center">
    GIF showing the process of fine-tuning the parameters Using StereoCam GUI.
@@ -64,7 +64,7 @@ The **StereoCam** library has a facility to use the Block Matching algorithm for
 Disparity and depth are inversely related. An easy way to find an accurate mapping between them is by collecting pairs of depth and disparity values and find the best fitting curve using least-squares fitting.
 
 <p align="center">
-  <img src='/images/disparity2depth.gif'>
+  <img src='images/disparity2depth.gif'>
 </p>
 <p align="center">
   Capturing depth and disparity data points for curve fitting.
@@ -78,7 +78,7 @@ Each pixel's depth is estimated using the depth map and the calibrated camera pa
 The point cloud generated in the above process is displayed using Open3D.
 
 <p align="center">
-  <img src='/images/stereo3D.gif'>
+  <img src='images/stereo3D.gif'>
 </p>
 <p align="center">
   Live pointcloud displayed using Open3D
@@ -93,7 +93,7 @@ The point cloud generated in the above process is displayed using Open3D.
 A single RGB-D image can be used to generate a 2.5 D pointcloud using back-projection. If we capture RGB-D images of an object from multiple view points, we can reconstruct a 3D model of the object by aligning all the individual 2.5 D pointclouds using methods like ICP - Iterative Closest Point algorithm. 
 
 <p align="center">
-  <img src='/images/capturing_stereo.gif'>
+  <img src='images/capturing_stereo.gif'>
 </p>
 <p align="center">
   Process of capturing stereo images for 3D reconstruction.
@@ -104,7 +104,7 @@ A single RGB-D image can be used to generate a 2.5 D pointcloud using back-proje
 We use stereopsis to perceive depth using our binocular vision system. We can simulate such disparities by artificially presenting two different images separately to each eye using a method called stereoscopy. Initially, for 3D movies, people achieved this by encoding each eye’s image using filters of red and cyan colors. They used the red-cyan 3D glasses to ensure that each of the two images reached the intended eye. This created the illusion of depth. The stereoscopic effect generated with this method is called anaglyph 3D.
 
 <p align="center">
-  <img src='/images/Anaglyph3D.gif'>
+  <img src='images/Anaglyph3D.gif'>
 </p>
 <p align="center">
   Anaglyph 3D movie created using stereo camera setup
